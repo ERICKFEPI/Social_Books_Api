@@ -1,6 +1,6 @@
 package br.fepi.socialbooks.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,10 +12,8 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Entity 
-
+@Entity
 public class Comentario {
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -62,5 +60,14 @@ public class Comentario {
 
 	public void setData(Date data) {
 		this.data = data;
+	}
+
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}	
+	
 }
